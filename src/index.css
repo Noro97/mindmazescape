@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "DebugFont";
+    src: url("assets/fonts/debug.ttf");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .magicpattern {
+    width: 100%;
+    height: 100%;
+    border: 5px solid black;
+    background-color: #86fc6a;
+    border-radius: 0% 100% 0% 100% / 0% 100% 0% 100%;
+  }
+
+  :root {
+    font-family: "DebugFont", sans-serif;
+    font-weight: 400;
+    width: 100%;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+* {
+  overflow-y: hidden;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
