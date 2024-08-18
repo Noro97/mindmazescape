@@ -67,9 +67,9 @@ const App = () => {
         {isMobilePlatform ? (
           <Home user={launchparams.initData?.user || initData?.user} />
         ) : (
-          <div className="text-center">
+          <div className=" flex flex-col justify-center text-center">
             <h1 className="text-[45px] text-[#86fc6a]">Play on your mobile</h1>
-            <img src="qr-code.svg" alt="coin" />
+            <img className='max-h-[600px]' src="qr-code.svg" alt="coin" />
             <h1 className="text-[45px] text-[#86fc6a]">@MindMazescapeBot</h1>
           </div>
         )}
