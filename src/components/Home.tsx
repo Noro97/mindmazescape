@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import CoinBalance from "./CoinBalance";
 import ImageButton from "./ImageButton";
-import { debounce } from "lodash-es";
 import imgUrl from "../assets/img/brain.png";
 import {
   initSwipeBehavior,
