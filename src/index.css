@@ -4,8 +4,8 @@
 
 @layer base {
   @font-face {
-    font-family: "DebugFont";
-    src: url("assets/fonts/debug.ttf");
+    font-family: "PixeboyFont";
+    src: url("assets/fonts/Pixeboy.ttf");
     font-weight: normal;
     font-style: normal;
   }
@@ -19,7 +19,7 @@
   }
 
   :root {
-    font-family: "DebugFont", sans-serif;
+    font-family: "PixeboyFont", sans-serif;
     font-weight: 400;
     width: 100%;
     color-scheme: light dark;

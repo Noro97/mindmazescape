@@ -5,7 +5,6 @@ interface ImageButtonProps {
   imageSrc: string;
   altText: string;
   hasEnergy: boolean;
-  onClickCount?: (count: number) => void;
   onTouchCount?: (count: number) => void;
   className?: string;
   width?: string | number;
@@ -22,7 +21,6 @@ const ImageButton: React.FC<ImageButtonProps> = ({
   imageSrc,
   altText,
   className,
-  onClickCount,
   onTouchCount,
   hasEnergy,
   width,
@@ -30,17 +28,6 @@ const ImageButton: React.FC<ImageButtonProps> = ({
 }) => {
   const [plusOnes, setPlusOnes] = useState<PlusOne[]>([]);
   const activeTouchesRef = useRef<Set<number>>(new Set());
-
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    if (hasEnergy) {
-      const { clientX, clientY } = event;
-
-      // Create a "+1" element at the click position
-      addPlusOne(clientX - 20, clientY - 10);
-
-      if (onClickCount) onClickCount(1); // Since each click is 1 "+1"
-    }
-  };
 
   const handleTouchStart = (event: React.TouchEvent<HTMLButtonElement>) => {
     const touches = event.touches;
@@ -81,10 +68,9 @@ const ImageButton: React.FC<ImageButtonProps> = ({
   };
 
   return (
-    <div className="flex justify-center w-full p-[100px]">
+    <div className="flex justify-center w-full p-[50px]">
       <button
         className={`${className} focus:outline-none`}
-        onClick={handleClick}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
@@ -113,7 +99,8 @@ const ImageButton: React.FC<ImageButtonProps> = ({
             transform: "translate(50%, 20%)",
           }}
         >
-go        </div>
+          <span className="text-[26px]">+1</span>
+        </div>
       ))}
     </div>
   );

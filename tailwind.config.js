@@ -5,7 +5,7 @@ export default {
     extend: {
       backgroundImage: {
         "coin-balance-layer": "url('/layer.svg')",
-        "center-layer": "url('/center-layer.jpg')",
+        "center-layer": "url('/center-layer.png')",
         "coin-tap-bg": "url('/coin-tap-bg.svg')",
       },
       boxShadow: {
