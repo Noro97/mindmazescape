@@ -7,6 +7,7 @@ import {
 } from "@telegram-apps/sdk";
 
 import Home from "./components/Home";
+import NavTabs from "./components/NavTabs";
 
 const App = () => {
   const initDataRaw = new URLSearchParams([
@@ -63,18 +64,28 @@ const App = () => {
 
   return (
     <SDKProvider acceptCustomStyles debug>
-      <div className="overflow-y-hidden flex flex-col bg-no-repeat justify-around bg-center-layer gap-2 bg-cover w-full h-[100vh] px-[20px]">
+      <div className="overflow-y-hidden flex flex-col bg-main-bg justify-around gap-2 w-full h-[100vh] px-[20px]">
         {isMobilePlatform ? (
-          <Home user={launchparams.initData?.user || initData?.user} />
+          <>
+            <Home user={launchparams.initData?.user || initData?.user} />
+            <NavTabs />
+          </>
         ) : (
           <div className=" flex flex-col justify-center text-center">
             <h1 className="text-[45px] text-[#86fc6a]">Play on your mobile</h1>
-            <img className='max-h-[600px]' src="qr-code.svg" alt="coin" />
+            <img className="max-h-[600px]" src="qr-code.svg" alt="coin" />
             <h1 className="text-[45px] text-[#86fc6a]">@MindMazescapeBot</h1>
           </div>
         )}
       </div>
     </SDKProvider>
+
+    // <SDKProvider acceptCustomStyles debug>
+    //   <div className="overflow-y-hidden flex flex-col bg-main-bg justify-around bg-center-layer gap-2 w-full h-[100vh] px-[20px]">
+    //     <Home user={launchparams.initData?.user || initData?.user} />
+    //     <NavTabs />
+    //   </div>
+    // </SDKProvider>
   );
 };
 

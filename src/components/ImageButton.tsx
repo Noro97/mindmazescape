@@ -68,7 +68,7 @@ const ImageButton: React.FC<ImageButtonProps> = ({
   };
 
   return (
-    <div className="flex justify-center w-full p-[50px]">
+    <div className="flex justify-center w-full px-[50px]">
       <button
         className={`${className} focus:outline-none`}
         onTouchStart={handleTouchStart}
