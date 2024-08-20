@@ -64,7 +64,7 @@ const App = () => {
 
   return (
     <SDKProvider acceptCustomStyles debug>
-      <div className="overflow-y-hidden flex flex-col bg-main-bg justify-around gap-2 w-full h-[100vh] px-[20px]">
+      <div className="overflow-y-hidden flex flex-col bg-main-bg justify-around gap-2 w-full h-[100vh] px-[5px]">
         {isMobilePlatform ? (
           <>
             <Home user={launchparams.initData?.user || initData?.user} />
@@ -81,7 +81,7 @@ const App = () => {
     </SDKProvider>
 
     // <SDKProvider acceptCustomStyles debug>
-    //   <div className="overflow-y-hidden flex flex-col bg-main-bg justify-around bg-center-layer gap-2 w-full h-[100vh] px-[20px]">
+    //   <div className="overflow-y-hidden flex flex-col bg-main-bg justify-around gap-2 w-full h-[100vh] px-[5px]">
     //     <Home user={launchparams.initData?.user || initData?.user} />
     //     <NavTabs />
     //   </div>

@@ -24,6 +24,27 @@ export default function NavTabs() {
         commentCount: 3,
         shareCount: 2,
       },
+      {
+        id: 3,
+        title: "So you've bought coffee... now what?",
+        date: "2h ago",
+        commentCount: 3,
+        shareCount: 2,
+      },
+      {
+        id: 4,
+        title: "So you've bought coffee... now what?",
+        date: "2h ago",
+        commentCount: 3,
+        shareCount: 2,
+      },
+      {
+        id: 5,
+        title: "So you've bought coffee... now what?",
+        date: "2h ago",
+        commentCount: 3,
+        shareCount: 2,
+      },
     ],
     Popular: [
       {
@@ -57,17 +78,34 @@ export default function NavTabs() {
         shareCount: 2,
       },
     ],
+    Friends: [
+      {
+        id: 1,
+        title: "Ask Me Anything: 10 answers to your questions about coffee",
+        date: "2d ago",
+        commentCount: 9,
+        shareCount: 5,
+      },
+      {
+        id: 2,
+        title: "The worst advice we've ever heard about coffee",
+        date: "4d ago",
+        commentCount: 1,
+        shareCount: 2,
+      },
+    ],
   });
 
   return (
-    <div className="w-full max-w-md px-1 py-3 sm:px-0">
+    <div className="w-full px-1 py-3">
       <TabGroup>
         <TabPanels className="mb-2">
           {Object.values(categories).map((posts, idx) => (
             <TabPanel
               key={idx}
               className={classNames(
-                "rounded-xl h-[192px] bg-[#4d4b4b]/70 p-3",
+              
+                "rounded-xl overflow-y-scroll h-[210px] bg-[#4d4b4b]/70 p-3",
                 "ring-white/60 ring-offset-2 ring-offset-[#55b83c] focus:outline-none "
               )}
             >
@@ -75,7 +113,7 @@ export default function NavTabs() {
                 {posts.map((post) => (
                   <li
                     key={post.id}
-                    className="relative rounded-md p-3 hover:bg-gray-100"
+                    className="relative rounded-md mb-3 p-2 bg-[#7a7777]/70"
                   >
                     <h3 className="text-md text-[black] font-medium leading-5">
                       {post.title}
@@ -109,10 +147,10 @@ export default function NavTabs() {
               className={({ selected }) =>
                 classNames(
                   "w-full rounded-lg py-2.5 text-lg font-medium leading-5",
-                  "ring-white ring-offset-2 ring-offset-[#55b83c] focus:outline-none focus:ring-2",
+                  "ring-white/70 ring-offset-2 ring-offset-[#55b83c] focus:outline-none focus:ring-2",
                   selected
-                    ? "bg-white text-[#55b83c] shadow"
-                    : "text-white hover:bg-white/[0.12] hover:text-white"
+                    ? "bg-white/70 text-[#55b83c] shadow"
+                    : "text-white"
                 )
               }
             >
